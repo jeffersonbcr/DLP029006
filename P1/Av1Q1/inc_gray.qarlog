@@ -1,0 +1,18 @@
+Quartus II Archive log --	/home/jefferson.br/DLP/Av1Q1/inc_gray.qarlog
+
+Archive:	/home/jefferson.br/DLP/Av1Q1/inc_gray.qar
+Date:		Tue Jul 20 13:48:55 2021
+Quartus II 32-bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+/home/jefferson.br/DLP/Av1Q1/db/inc_gray.sim.vwf
+/home/jefferson.br/DLP/Av1Q1/inc_gray.qpf
+/home/jefferson.br/DLP/Av1Q1/inc_gray.qsf
+/home/jefferson.br/DLP/Av1Q1/inc_gray.vhd
+/home/jefferson.br/DLP/Av1Q1/incremental_db/compiled_partitions/inc_gray.db_info
+/home/jefferson.br/DLP/Av1Q1/tb_incgray.vwf
+/opt/altera/13.0sp1/quartus/linux/assignment_defaults.qdf
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

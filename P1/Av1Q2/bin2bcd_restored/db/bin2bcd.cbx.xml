@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="bin2bcd">
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_toh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_add_sub:Add3" CBX_FILE_NAME="add_sub_toh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_r6m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_hnh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_knh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_add_sub:Add4" CBX_FILE_NAME="add_sub_0ph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bin2bcd|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_o6m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

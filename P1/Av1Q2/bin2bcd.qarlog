@@ -1,0 +1,24 @@
+Quartus II Archive log --	/home/jefferson.br/DLP/Av1Q2/bin2bcd.qarlog
+
+Archive:	/home/jefferson.br/DLP/Av1Q2/bin2bcd.qar
+Date:		Tue Jul 20 14:14:56 2021
+Quartus II 32-bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+
+	=========== Files Selected: ===========
+/home/jefferson.br/DLP/Av1Q2/bin2bcd.qpf
+/home/jefferson.br/DLP/Av1Q2/bin2bcd.qsf
+/home/jefferson.br/DLP/Av1Q2/bin2bcd.vhd
+/home/jefferson.br/DLP/Av1Q2/db/bin2bcd.sim.vwf
+/home/jefferson.br/DLP/Av1Q2/incremental_db/compiled_partitions/bin2bcd.db_info
+/home/jefferson.br/DLP/Av1Q2/tb_bin2bcd.vwf
+/opt/altera/13.0sp1/quartus/linux/assignment_defaults.qdf
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Tue Jul 20 14:22:50 2021
+Source archive file:	/home/jefferson.br/DLP/Av1Q2/bin2bcd.qar
+Archive was extracted into	/home/jefferson.br/DLP/Av1Q2/bin2bcd_restored/
+		 - successfully.

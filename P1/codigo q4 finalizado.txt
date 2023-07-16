@@ -1,0 +1,102 @@
+library ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+entity ula_flags is
+	generic(N : natural := 3);
+	port
+	(
+		-- Input ports
+		
+		a, b : in  std_logic_vector(N-1 downto 0);	
+		opcode : in  std_logic_vector(3 downto 0);
+		-- Um bit
+		
+		cin: in std_logic; 
+		-- Output ports	
+	
+		y, y_modificado: out  std_logic_vector(N-1 downto 0)
+	);
+end entity;
+
+architecture hardware of ula_flags is
+	signal y_log ,y_art_modificado: std_logic_vector (N-1 downto 0);
+	signal a_uns, b_uns, y_art: unsigned(N-1 downto 0);
+	signal overflow_a,overflow_b,underflow_a ,underflow_b : bit;
+	signal cin_uns: unsigned (0 downto 0);
+	signal over_a_uns,over_b_uns : unsigned (N-1 downto 0);
+	signal under_a_sig , under_b_sig : signed (N downto 0);
+	signal a_sig, b_sig : signed (N-1 downto 0);
+	signal flag : bit_vector (3 downto 0);
+	constant max : std_logic_vector(N-1 downto 0) := (N-1 => '1' , others => '0');
+	constant min : std_logic_vector(N-1 downto 0) := ( others => '0');
+	
+begin
+--unidade logica
+l1:	with opcode select y_log <= 
+		NOT a when "0000",
+		NOT b  when "0001",
+		a and b when "0010",
+		a or b when "0011",
+		a nand b when "0100",
+		a nor b when "0101",
+		a xor b when "0110",
+		a xnor b when others;
+-- unidade aritmetica		
+		a_uns <= unsigned(a);
+		b_uns <= unsigned(b);
+		a_sig <= signed(a);
+		b_sig <= signed(b);
+		cin_uns <= "1" when cin = '1' else "0";
+l2:	with opcode select y_art <= 
+		(a_uns + 1) when "1010",
+		(b_uns + 1) when "1011",
+		(a_uns - 1) when "1100",
+		(b_uns - 1) when "1101",
+		(a_uns + b_uns) when "1110",
+		(a_uns) when "1000",
+		(b_uns) when "1001",
+		(a_uns + b_uns + cin_uns) when others;
+		
+--flags de erro
+		with opcode select over_a_uns <= 
+		resize(a_uns + b_uns,N) when "1110",
+		resize(a_uns + 1,N) when "1010",
+		resize(a_uns + b_uns + cin_uns,N) when others;
+		
+      overflow_b <= '1' when (over_a_uns(N-1) = '1') else '0'; 
+		
+		with opcode select over_b_uns <= 
+		resize(a_uns + b_uns,N) when "1110",
+		resize(b_uns + 1,N) when "1011",
+		resize(a_uns + b_uns + cin_uns,N) when others;
+		
+      overflow_a <= '1' when (over_b_uns(N-1) = '1') else '0'; 
+		
+		under_a_sig <= resize(a_sig - 1,N+1) when (opcode = "1100") else resize(signed(min),N+1);
+      underflow_a <= '1' when (under_a_sig(N) = '1') else '0'; 
+		
+		under_b_sig <= resize(b_sig - 1,N+1) when (opcode = "1101") else resize(signed(min),N+1);
+      underflow_b <= '1' when (under_b_sig(N) = '1') else '0'; 
+--saidas		
+		y <= y_log when (opcode(3) = '0') else std_logic_vector (y_art);
+		
+		flag(0) <= underflow_b when (underflow_b = '1') else '0';
+		flag(2) <= underflow_a when (underflow_a = '1') else '0';
+		flag(1) <= overflow_a when (overflow_a = '1') else '0';
+		flag(3) <= overflow_b when (overflow_b = '1') else '0';
+		
+		with flag select y_art_modificado<=
+		std_logic_vector(max) when "1010",
+		std_logic_vector(max) when "1000",
+		std_logic_vector(max) when "0010",
+		std_logic_vector(min) when "0100",
+		std_logic_vector(min) when "0001",
+		std_logic_vector(y_art) when others;
+		
+		y_modificado <= y_log when (opcode(3) = '0') else y_art_modificado;
+		
+		
+
+		
+end hardware;

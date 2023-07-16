@@ -1,0 +1,45 @@
+|bin2bcd
+x_bin[0] => Div0.IN16
+x_bin[0] => Div1.IN13
+x_bin[0] => u_bcd[0].DATAIN
+x_bin[1] => Div0.IN15
+x_bin[1] => Div1.IN12
+x_bin[1] => Add4.IN24
+x_bin[2] => Div0.IN14
+x_bin[2] => Div1.IN11
+x_bin[2] => Add4.IN23
+x_bin[3] => Div0.IN13
+x_bin[3] => Div1.IN10
+x_bin[3] => Add4.IN22
+x_bin[4] => Div0.IN12
+x_bin[4] => Div1.IN9
+x_bin[4] => Add4.IN21
+x_bin[5] => Div0.IN11
+x_bin[5] => Div1.IN8
+x_bin[5] => Add4.IN20
+x_bin[6] => Div0.IN10
+x_bin[6] => Div1.IN7
+x_bin[6] => Add4.IN19
+x_bin[7] => Div0.IN9
+x_bin[7] => Div1.IN6
+x_bin[7] => Add4.IN18
+x_bin[8] => Div0.IN8
+x_bin[8] => Div1.IN5
+x_bin[8] => Add4.IN17
+x_bin[9] => Div0.IN7
+x_bin[9] => Div1.IN4
+x_bin[9] => Add4.IN16
+c_bcd[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+c_bcd[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+c_bcd[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+c_bcd[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+d_bcd[0] <= Div1.DB_MAX_OUTPUT_PORT_TYPE
+d_bcd[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+d_bcd[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+d_bcd[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+u_bcd[0] <= x_bin[0].DB_MAX_OUTPUT_PORT_TYPE
+u_bcd[1] <= Add4.DB_MAX_OUTPUT_PORT_TYPE
+u_bcd[2] <= Add4.DB_MAX_OUTPUT_PORT_TYPE
+u_bcd[3] <= Add4.DB_MAX_OUTPUT_PORT_TYPE
+
+

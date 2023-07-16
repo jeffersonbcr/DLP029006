@@ -1,0 +1,24 @@
+criar novos estados: v1(possui 4 possibilidades de estar verde),v2,v3,v4,v5
+verde -> liga lampadas 1 e 5 do verde
+depois de 1 segundo irá ligar lampada 2 e 5
+depois de 1 segundo irá ligar lampada 3 e 5 
+depois de 1 segundo irá ligar lampada 4 e 5 
+depois de 1 segundo irá ligar lampada 5 somente.
+depois troca para o estado amarelo
+-----------------------------------------------------------------------------
+deixa ligado os 2 grandes por um momento
+depois decrementa até chegar no zero
+troca para o estado amarelo
+liga todos os vermelhos
+decrementa
+na outra sinaleira faz a mesma coisa
+------------------------------------------------------------------------------
+criar v1 + 4 estados,ligar os leds,definir temporizações 
+criar v2 + 4 estados,ligar os leds,definir temporizações 
+------------------------------------------------------------------------------
+ambulancia chega na av1 esta vermelho:
+acionou,liga todos os verde da av1 e liga todos os vermelhos da av2
+
+ambulancia chega na av2 esta vermelho:
+acionou,liga todos os verde da av2 e liga todos os vermelhos da av1
+
